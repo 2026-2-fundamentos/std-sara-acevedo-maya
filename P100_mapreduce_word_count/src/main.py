@@ -4,7 +4,7 @@ import shutil
 import string
 import time
 
-ACTIVITY_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(_file_)))
+ACTIVITY_FOLDER = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_FOLDER = os.path.join(ACTIVITY_FOLDER, "data")
 INPUT_FOLDER = os.path.join(ACTIVITY_FOLDER, "temp", "input")
 OUTPUT_FOLDER = os.path.join(ACTIVITY_FOLDER, "temp", "output")
