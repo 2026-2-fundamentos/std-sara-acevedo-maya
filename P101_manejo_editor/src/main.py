@@ -1,5 +1,6 @@
 import glob
 import os.path
+import shutil
 import string
 import time
 from pathlib import Path
@@ -109,6 +110,12 @@ with open(f"{OUTPUT_FOLDER}/part-00000", "w", encoding="utf-8") as f:
 
 with open(f"{OUTPUT_FOLDER}/_SUCCESS", "w", encoding="utf-8") as f:
     f.write("")
+
+
+# Copia los resultados generados a la carpeta de entrega.
+SUBMISSION_FOLDER.mkdir(parents=True, exist_ok=True)
+for filename in ("part-00000", "_SUCCESS"):
+    shutil.copy2(OUTPUT_FOLDER / filename, SUBMISSION_FOLDER / filename)
 
 
 # Reporte de tiempo de ejecución
